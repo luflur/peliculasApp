@@ -1,6 +1,26 @@
 <ion-content>
 
-  <swiper-container
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+        <h3>Películas Nuevas</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-slideshow-backdrop [peliculas]="peliculasRecientes"></app-slideshow-backdrop>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+        <h3>Cartelera</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-slidesshow-poster [peliculas]="peliculasRecientes" class="poster"></app-slidesshow-poster>
+
+  <!--<swiper-container
     [attr.slides-per-view]="slideOpts.slidesPerView"
     [attr.free-mode]="slideOpts.freeMode">
     <swiper-slide *ngFor="let pelicula of peliculasRecientes">
@@ -10,7 +30,7 @@
       </ion-card>
 
     </swiper-slide>
-  </swiper-container>
+  </swiper-container>-->
 
 </ion-content>
 |
