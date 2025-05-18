@@ -1,0 +1,18 @@
+<swiper-container
+  [attr.slides-per-view]="slideOpts.slidesPerView"
+  [attr.free-mode]="slideOpts.freeMode"
+  [attr.space-between]="slideOpts.spaceBetween">
+
+  <swiper-slide *ngFor="let pares of peliculas | pares">
+
+    <ion-row>
+      <ion-col size="12" *ngFor="let pelicula of pares">
+        <ion-card>
+          <img [src]="pelicula.poster_path | imagen" class="poster">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </swiper-slide>
+
+</swiper-container>

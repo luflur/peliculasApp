@@ -1,11 +1,13 @@
 <swiper-container
-    [attr.slides-per-view]="slideOpts.slidesPerView"
-    [attr.free-mode]="slideOpts.freeMode">
-    <swiper-slide *ngFor="let pelicula of peliculas">
+  [attr.slides-per-view]="slideOpts.slidesPerView"
+  [attr.free-mode]="slideOpts.freeMode">
 
-      <ion-card>
-        <img [src]="pelicula.poster_path | imagen">
-      </ion-card>
+  <swiper-slide *ngFor="let pelicula of peliculas">
 
-    </swiper-slide>
-  </swiper-container>
+    <ion-card>
+      <img [src]="pelicula.poster_path | imagen">
+    </ion-card>
+    
+  </swiper-slide>
+
+</swiper-container>
