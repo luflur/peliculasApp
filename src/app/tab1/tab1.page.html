@@ -20,6 +20,16 @@
 
   <app-slidesshow-poster [peliculas]="peliculasRecientes" class="poster"></app-slidesshow-poster>
 
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+        <h3>Populares</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-slidesshow-poster [peliculas]="populares" class="poster"></app-slidesshow-poster>
+
   <!--<swiper-container
     [attr.slides-per-view]="slideOpts.slidesPerView"
     [attr.free-mode]="slideOpts.freeMode">
