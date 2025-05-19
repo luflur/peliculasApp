@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Pelicula } from 'src/app/interfaces/interfaces';
 import { register } from 'swiper/element/bundle';
+import { DetalleComponent } from '../detalle/detalle.component';
+import { ModalController } from '@ionic/angular';
 
 register();
 
@@ -10,7 +12,7 @@ register();
   styleUrls: ['./slidesshow-poster.component.scss'],
   standalone: false
 })
-export class SlidesshowPosterComponent  implements OnInit {
+export class SlidesshowPosterComponent implements OnInit {
 
   @Input() peliculas: Pelicula[] = [];
 
@@ -19,7 +21,18 @@ export class SlidesshowPosterComponent  implements OnInit {
     freeMode: true
   }
 
-  constructor() { }
+  constructor(private modalCtrl: ModalController) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  async verDetalle(id: string) {
+
+    const modal = await this.modalCtrl.create({
+      component: DetalleComponent,
+      componentProps: {
+        id
+      }
+    });
+    modal.present();
+  }
 }

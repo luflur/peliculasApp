@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Pelicula } from 'src/app/interfaces/interfaces';
 import { register } from 'swiper/element/bundle';
+import { DetalleComponent } from '../detalle/detalle.component';
+import { ModalController } from '@ionic/angular';
 
 register();
 
@@ -21,11 +23,22 @@ export class SlideshowParesComponent implements OnInit {
     spaceBetween: 0
   }
 
-  constructor() { }
+  constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() { }
 
   onClick() {
     this.cargarMas.emit();
+  }
+
+  async verDetalle(id: string) {
+
+   const modal = await this.modalCtrl.create({
+      component: DetalleComponent,
+      componentProps: {
+        id
+      }
+    });
+    modal.present();
   }
 }
