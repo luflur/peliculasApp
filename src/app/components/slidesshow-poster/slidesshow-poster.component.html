@@ -4,7 +4,7 @@
 
   <swiper-slide *ngFor="let pelicula of peliculas">
 
-    <ion-card class="poster" (click)="verDetalle( pelicula.id )">
+    <ion-card class="poster" (click)="verDetalle( pelicula.id )" mode="md">
       <img [src]="pelicula.poster_path | imagen">
     </ion-card>
 

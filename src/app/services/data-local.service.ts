@@ -65,13 +65,22 @@ export class DataLocalService {
     return !existe;
   }
 
-  async cargarFavoritos(){
+  // async cargarFavoritos(){
 
-    const peliculas = await this._storage?.get('peliculas');
-    this.peliculas = peliculas || [];
-    return this.peliculas;
+  //   const peliculas = await this._storage?.get('peliculas');
+  //   this.peliculas = peliculas || [];
+  //   return this.peliculas;
 
+  // }
+  async cargarFavoritos() {
+  if (!this._storage) {
+    await this.init(); // Asegura que esté inicializado
   }
+
+  const peliculas = await this._storage?.get('peliculas');
+  this.peliculas = peliculas || [];
+  return this.peliculas;
+}
 
   async existePelicula(id: any){
     console.log(id);

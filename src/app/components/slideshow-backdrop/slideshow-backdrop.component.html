@@ -2,7 +2,7 @@
     [attr.slides-per-view]="slideOpts.slidesPerView"
     [attr.free-mode]="slideOpts.freeMode">
 
-    <swiper-slide *ngFor="let pelicula of peliculas">
+    <swiper-slide *ngFor="let pelicula of peliculas | filtroImagen">
 
       <ion-card (click)="verDetalle( pelicula.id )">
         <img [src]="pelicula.backdrop_path | imagen" style="height: 100%; width: 100%;">

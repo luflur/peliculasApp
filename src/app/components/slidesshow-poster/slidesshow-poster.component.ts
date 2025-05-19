@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Pelicula } from 'src/app/interfaces/interfaces';
 import { register } from 'swiper/element/bundle';
 import { DetalleComponent } from '../detalle/detalle.component';
@@ -15,6 +15,8 @@ register();
 export class SlidesshowPosterComponent implements OnInit {
 
   @Input() peliculas: Pelicula[] = [];
+  //Para refrescar favoritos cuando se cierre el modal
+  @Output() modalCerrado = new EventEmitter<void>();
 
   slideOpts = {
     slidesPerView: 3.2,
@@ -33,6 +35,9 @@ export class SlidesshowPosterComponent implements OnInit {
         id
       }
     });
-    modal.present();
+    await modal.present();
+
+    await modal.onWillDismiss();
+    this.modalCerrado.emit(); // Le avisa al padre que se cerró
   }
 }
