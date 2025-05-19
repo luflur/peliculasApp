@@ -18,7 +18,7 @@
     </ion-row>
   </ion-grid>
 
-  <app-slidesshow-poster [peliculas]="peliculasRecientes" class="poster"></app-slidesshow-poster>
+  <app-slidesshow-poster [peliculas]="peliculasRecientes"></app-slidesshow-poster>
 
   <ion-grid fixed>
     <ion-row>
@@ -28,7 +28,7 @@
     </ion-row>
   </ion-grid>
 
-  <app-slideshow-pares [peliculas]="populares" class="poster"></app-slideshow-pares>
+  <app-slideshow-pares [peliculas]="populares" (cargarMas)="cargarMas()"></app-slideshow-pares>
 
   <!--<swiper-container
     [attr.slides-per-view]="slideOpts.slidesPerView"

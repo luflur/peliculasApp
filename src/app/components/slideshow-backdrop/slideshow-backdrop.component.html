@@ -1,10 +1,11 @@
 <swiper-container
     [attr.slides-per-view]="slideOpts.slidesPerView"
     [attr.free-mode]="slideOpts.freeMode">
+
     <swiper-slide *ngFor="let pelicula of peliculas">
 
       <ion-card>
-        <img [src]="pelicula.backdrop_path | imagen">
+        <img [src]="pelicula.backdrop_path | imagen" style="height: 100%; width: 100%;">
       </ion-card>
 
     </swiper-slide>

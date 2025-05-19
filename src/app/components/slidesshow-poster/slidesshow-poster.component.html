@@ -4,10 +4,10 @@
 
   <swiper-slide *ngFor="let pelicula of peliculas">
 
-    <ion-card>
+    <ion-card class="poster">
       <img [src]="pelicula.poster_path | imagen">
     </ion-card>
-    
+
   </swiper-slide>
 
 </swiper-container>

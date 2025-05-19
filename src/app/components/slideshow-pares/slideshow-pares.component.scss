@@ -1,0 +1,13 @@
+.slide-mas {
+  position: relative;
+  height: 300px;
+}
+
+.btn-mas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+}
