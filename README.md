@@ -23,16 +23,20 @@ Sigue estos pasos para ejecutar la aplicación en tu entorno local:
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/luflur/peliculasApp.git ```
+   git clone https://github.com/luflur/peliculasApp.git
+   ```
 2. Accede al directorio del proyecto:
   ```bash
-  cd peliculasApp ```
+  cd peliculasApp
+ ```
 3. Instala las dependencias:
   ```bash
-  npm install ```
+  npm install
+ ```
 4. Ejecuta la aplicación:
   ```bash
-  ionic serve ```
+  ionic serve
+ ```
 
 También puedes acceder a la versión PWA de la aplicación en el siguiente enlace: https://peliculas-687ea.web.app/
 
